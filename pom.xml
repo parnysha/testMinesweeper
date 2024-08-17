@@ -11,8 +11,8 @@
     <groupId>org.example</groupId>
     <artifactId>Minesweeper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>CRMForFSHM</name>
-    <description>CRMForFSHM</description>
+    <name>minesweeper</name>
+    <description>minesweeper</description>
     <url/>
     <licenses>
         <license/>
