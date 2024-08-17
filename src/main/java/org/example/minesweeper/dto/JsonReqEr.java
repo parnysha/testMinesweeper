@@ -1,11 +1,10 @@
 package org.example.minesweeper.dto;
 
-import jakarta.persistence.Column;
 import lombok.*;
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class JsonReqEr {
 
-    @Column
     private String error;
 }
