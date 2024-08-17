@@ -1,4 +1,4 @@
-Собираем:
+Собираем:/n
   mvn package clean
 Собираем образ:
   docker build -t minesweeper:0.0.1 .
