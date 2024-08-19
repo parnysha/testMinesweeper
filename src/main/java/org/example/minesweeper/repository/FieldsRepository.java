@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FieldsRepository extends CrudRepository<FieldsString, String> {
-    @Query("SELECT CONCAT(fieldString0,fieldString1,fieldString2,fieldString3,fieldString4) from FieldsString")
-    String queryFieldsStringByGameId(String game_id);
+    @Query("SELECT CONCAT(fieldString0,fieldString1,fieldString2,fieldString3,fieldString4) from FieldsString where gameId=:GameId")
+    String queryFieldsStringByGameId(@Param("GameId")String game_id);
 }
