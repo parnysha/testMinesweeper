@@ -33,25 +33,9 @@ public class CustomConverterBiggerFields{
         return fieldsString;
     }
     //конвертер из нескольких строк в массив чаров
-    public static Character[][] convertStringsToChars(FieldsString fieldsString){
+    public static Character[][] convertStringsToChars(String fieldsString){
         CustomConverter conv = new CustomConverter();
-        String sc = "";
-        if (fieldsString.getFieldString0() != null) {
-            sc += fieldsString.getFieldString0();
-        }
-        if (fieldsString.getFieldString1() != null) {
-            sc += fieldsString.getFieldString1();
-        }
-        if (fieldsString.getFieldString2() != null) {
-            sc += fieldsString.getFieldString2();
-        }
-        if (fieldsString.getFieldString3() != null) {
-            sc += fieldsString.getFieldString3();
-        }
-        if (fieldsString.getFieldString4() != null) {
-            sc += fieldsString.getFieldString4();
-        }
-        return conv.convertToEntityAttribute(sc);
+        return conv.convertToEntityAttribute(fieldsString);
     }
 
 
