@@ -64,9 +64,9 @@ public class UserServiceImpl implements UserService {
             throw new InvalidAction("Игра завершена");
         }
         Character[][] conver = new Character[player.getWidth()][player.getHeight()];
-        if(player.getHeight()* player.getWidth()>224&& player.getHeight()* player.getWidth()<930) {
-            String fields = fieldsRepository.queryFieldsStringByGameId(game_id);
-            conver = CustomConverterBiggerFields.convertStringsToChars(fields);
+        if(player.getHeight()* player.getWidth()>255&& player.getHeight()* player.getWidth()<1275) {
+            FieldsString fieldsString = fieldsRepository.findByGameId(game_id);
+            conver = CustomConverterBiggerFields.convertStringsToChars(fieldsString);
         }
         //открытие нажатой клетки
         game.openCell(game.getCharsClient(), game.getCells(), row,col, player.getMines_count());
