@@ -3,7 +3,6 @@ package org.example.minesweeper.gameLogic;
 public class Cell {
     private int countMine=0;
     private boolean isMine;
-    private boolean isOpen=false;
     public void countMine(){
         countMine++;
     }
@@ -15,11 +14,5 @@ public class Cell {
     }
     public boolean getIsMine(){
         return isMine;
-    }
-    public void isOpen(){
-        this.isOpen=true;
-    }
-    public boolean getIsOpen(){
-        return isOpen;
     }
 }
