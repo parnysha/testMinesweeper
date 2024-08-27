@@ -23,7 +23,7 @@ public class GlobalExceptionHandlerController {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<JsonReqEr> handleException(Exception exception) {
+    public ResponseEntity<JsonReqEr> handleException() {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new JsonReqEr("Произошла неизвестная ошибка"));

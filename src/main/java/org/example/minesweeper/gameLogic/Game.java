@@ -7,6 +7,9 @@ import org.example.minesweeper.exceptions.InvalidAction;
 
 import java.util.*;
 
+import static org.example.minesweeper.gameLogic.GameState.NOW;
+import static org.example.minesweeper.gameLogic.GameState.WiN;
+
 @Setter
 @Getter
 public class Game {
@@ -88,7 +91,7 @@ public class Game {
         openMine();
         chars[x][y]=String.valueOf(cells[x][y].getCountMine()).charAt(0);
         if (chars.length*chars[0].length-mines_count<=getOpensMines()){
-            setGameState(GameState.WiN);;
+            setGameState(WiN);;
             return;
         }
         if(cells[x][y].getCountMine() == 0) {
@@ -115,7 +118,7 @@ public class Game {
     }
     //Задание настроек для игры
     public void startGame(int width,int height,int mines_count){
-        setGameState(GameState.NOW);
+        setGameState(NOW);
         setOpensMines(0);
         setCells(new Cell[width][height]);
         setChars(new Character[width][height]);
@@ -125,26 +128,17 @@ public class Game {
         createMine(getCells(), getChars(), mines_count);
     }
 
-    public void checkStateGame(Player player, Character[][] conver){
+    public void checkStateGame(Player player){
         switch (getGameState()){
             case LOSE -> {
                 player.setCompleted(true);
-                if (player.getHeight()* player.getWidth()>224&& player.getHeight()* player.getWidth()<930){
-                    player.setField(conver);
-                }else {
-                    player.setField(getChars());
+                player.setField(getChars());
                 }
-            }
             case WiN -> {
                 player.setCompleted(true);
-                if(player.getHeight()* player.getWidth()>224&& player.getHeight()* player.getWidth()<930){
-                    winMap(conver,'X');
-                    player.setField(conver);
-                }else {
-                    winMap(getCharsClient(),' ');
-                    player.setField(getCharsClient());
+                winMap(getCharsClient(),' ');
+                player.setField(getCharsClient());
                 }
-            }
             case NOW -> {
                 player.setField(getCharsClient());
             }
