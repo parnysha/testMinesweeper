@@ -3,6 +3,7 @@ package org.example.minesweeper.service;
 import lombok.RequiredArgsConstructor;
 import org.example.minesweeper.JSONsample.JSonPlayer;
 import org.example.minesweeper.dto.GameInfo;
+import org.example.minesweeper.dto.converter.CustomConverter;
 import org.example.minesweeper.exceptions.InvalidAction;
 import org.example.minesweeper.exceptions.UnacceptableSumMines;
 import org.example.minesweeper.gameLogic.*;
