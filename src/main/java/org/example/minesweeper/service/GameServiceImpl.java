@@ -43,7 +43,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public JSonPlayer GameTurnRequest(String game_id, int col, int row) throws InvalidAction{
+    public JSonPlayer gameTurnRequest(String game_id, int col, int row) throws InvalidAction{
         GameInfo gameInfo = gameRepository.findByGameId(game_id);
         if (gameInfo.isCompleted()){
             throw new InvalidAction("Игра завершена");

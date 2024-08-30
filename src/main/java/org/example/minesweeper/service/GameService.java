@@ -5,5 +5,5 @@ import org.example.minesweeper.JSONsample.JSonPlayer;
 public interface GameService {
 
     JSonPlayer newGameRequest(int width, int height, int mines_count);
-    JSonPlayer GameTurnRequest(String game_id, int col, int row);
+    JSonPlayer gameTurnRequest(String game_id, int col, int row);
     }

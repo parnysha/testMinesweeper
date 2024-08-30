@@ -1,9 +1,9 @@
 package org.example.minesweeper.JSONsample;
 
 import lombok.AllArgsConstructor;;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 @AllArgsConstructor
 public class JSonPlayer {
     private String game_id;
