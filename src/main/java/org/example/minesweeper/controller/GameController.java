@@ -23,7 +23,7 @@ public class GameController {
 
     @PostMapping("/turn")
     public JSonPlayer turnUser(@RequestBody JSonReqTurn reqNew) {
-        return gameService.GameTurnRequest(reqNew.getGame_id(),reqNew.getCol(),reqNew.getRow());
+        return gameService.gameTurnRequest(reqNew.getGame_id(),reqNew.getCol(),reqNew.getRow());
     }
 
 }
